@@ -6,18 +6,21 @@ module Grammer
     include HTTParty
     base_uri 'https://www.instagram.com'
 
+    attr_reader :data
+
     def initialize(username)
-      @username = username
-      @userpath = "/#{username}"
+      @data = extract_data(username)
     end
 
-    def json
-      raw_page    = self.class.get(@userpath)
+    private
+
+    def extract_data(username)
+      raw_page    = self.class.get("/#{username}")
       parsed_page = Nokogiri::HTML(raw_page)
       script      = parsed_page.at('body script')
       json_block  = script.text.match(/({.*})/)[1]
       json        = JSON.parse(json_block)
-      @data       = json.dig('entry_data', 'ProfilePage', 0, 'graphql', 'user')
+      json.dig('entry_data', 'ProfilePage', 0, 'graphql', 'user')
     end
   end
 end

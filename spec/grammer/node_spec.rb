@@ -3,14 +3,14 @@
 require 'spec_helper'
 
 describe Grammer::Node do
-  let(:user_info) { YAML.safe_load(open('./spec/fixtures/user_info.yml')) }
+  let(:user_raw_data) { YAML.safe_load(open('./spec/fixtures/user_raw_data.yml')) }
 
   it { expect(described_class).to include(HTTParty) }
 
-  describe '#json' do
+  describe '#data' do
     subject(:node) { described_class.new('caioertai') }
-    it 'returns a json of the given user' do
-      expect(node.json).to eq(user_info)
+    it 'returns a hash of the given user' do
+      expect(node.data).to be_a(Hash)
     end
   end
 end
