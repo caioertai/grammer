@@ -3,4 +3,6 @@
 # Main Module
 module Grammer
   require 'httparty'
+
+  require 'grammer/node'
 end

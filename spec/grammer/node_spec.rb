@@ -1,5 +1,4 @@
 require 'spec_helper'
 
-RSpec.describe Node do
-  pending 'soon tm'
+RSpec.describe Grammer::Node do
 end
