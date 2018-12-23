@@ -5,5 +5,9 @@ module Grammer
   class Node
     include HTTParty
     base_uri 'https://www.instagram.com/'
+
+    def initialize(username)
+      
+    end
   end
 end
