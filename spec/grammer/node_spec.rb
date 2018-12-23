@@ -1,4 +1,5 @@
 require 'spec_helper'
 
-RSpec.describe Grammer::Node do
+describe Grammer::Node do
+  it { expect(described_class).to include(HTTParty) }
 end

@@ -1,4 +1,6 @@
 module Grammer
   class Node
-  end  
+    include HTTParty
+    base_uri 'https://www.instagram.com/'
+  end
 end
