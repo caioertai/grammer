@@ -1,0 +1,59 @@
+biography: ''
+blocked_by_viewer: false
+country_block: false
+external_url: nil
+external_url_linkshimmed: nil
+edge_followed_by:
+  count: 24
+followed_by_viewer: false
+edge_follow:
+  count: 1
+follows_viewer: false
+full_name: Caio Andrade
+has_channel: false
+has_blocked_viewer: false
+highlight_reel_count: 0
+has_requested_viewer: false
+id: 525171759
+is_business_account: false
+is_joined_recently: false
+business_category_name: nil
+business_email: nil
+business_phone_number: nil
+business_address_json: nil
+is_private: false
+is_verified: false
+edge_mutual_followed_by:
+  count: 0
+  edges: []
+profile_pic_url:
+  https://scontent-icn1-1.cdninstagram.com/vp/5ff3a8d725be81f48bc7b046b08f9827/5CB64CF1/t51.2885-19/44884218_345707102882519_2446069589734326272_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com
+profile_pic_url_hd:
+  https://scontent-icn1-1.cdninstagram.com/vp/5ff3a8d725be81f48bc7b046b08f9827/5CB64CF1/t51.2885-19/44884218_345707102882519_2446069589734326272_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com
+requested_by_viewer: false
+username: caioertai
+connected_fb_page: nil
+edge_felix_video_timeline:
+  count: 0
+  page_info: 
+    has_next_page: false
+    end_cursor: nil
+  edges: []
+edge_owner_to_timeline_media:
+  count: 0
+  page_info: 
+    has_next_page: false
+    end_cursor: nil
+  edges: []
+edge_saved_media:
+  count: 0
+  page_info:
+    has_next_page: false
+    end_cursor: nil
+  edges: []
+edge_media_collections:
+  count: 0
+  page_info:
+    has_next_page: false
+    end_cursor: nil
+  edges: []
