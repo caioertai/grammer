@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-RSpec.describe Grammer do
+describe Grammer do
   it { expect { Grammer }.not_to raise_error }
 end
