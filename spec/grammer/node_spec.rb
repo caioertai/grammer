@@ -4,7 +4,7 @@ require 'spec_helper'
 
 describe Grammer::Node do
   let(:node_page) { open('./spec/fixtures/node_page.html') }
-  let(:service)   { double('IgService', node: node_page) }
+  let(:service)   { double('IgService', node: Nokogiri::HTML(node_page)) }
 
   describe '#data' do
     subject(:mocked_node) { described_class.new('given_username', service: service) }
