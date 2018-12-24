@@ -7,13 +7,7 @@ module Grammer
 
     def initialize(username, attr = {})
       @service = attr[:service] || IgService
-      @data    = extract_data(username)
-    end
-
-    private
-
-    def extract_data(username)
-      service.node(username)
+      @data    = service.node(username)
     end
   end
 end
