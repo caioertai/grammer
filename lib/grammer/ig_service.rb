@@ -6,8 +6,8 @@ module Grammer
     include HTTParty
     base_uri 'https://www.instagram.com'
 
-    def self.node(username)
-      page = get("/#{username}")
+    def node(username)
+      page = self.class.get("/#{username}")
       json = Nokogiri::HTML(page)
                      .at('body script')
                      .text.match(/({.*})/)[1]

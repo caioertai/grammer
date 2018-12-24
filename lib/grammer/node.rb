@@ -6,8 +6,12 @@ module Grammer
     attr_reader :data, :service
 
     def initialize(username, attr = {})
-      @service = attr[:service] || IgService
+      @service = attr[:service] || IgService.new
       @data    = service.node(username)
+    end
+
+    def biography
+      @data['biography']
     end
   end
 end
