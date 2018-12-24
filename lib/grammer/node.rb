@@ -3,20 +3,16 @@
 module Grammer
   # Represents Instagram nodes (Users)
   class Node
-    include HTTParty
-    base_uri 'https://www.instagram.com'
-
     attr_reader :data
 
-    def initialize(username)
-      @data = extract_data(username)
+    def initialize(username, attr = {})
+      @data = attr[:raw_page] || extract_data(username)
     end
 
     private
 
     def extract_data(username)
-      raw_page    = self.class.get("/#{username}")
-      parsed_page = Nokogiri::HTML(raw_page)
+      parsed_page = Nokogiri::HTML(IgService.node(username))
       script      = parsed_page.at('body script')
       json_block  = script.text.match(/({.*})/)[1]
       json        = JSON.parse(json_block)
