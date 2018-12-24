@@ -3,8 +3,8 @@
 require 'spec_helper'
 
 describe Grammer::Node do
-  let(:node_page) { open('./spec/fixtures/node_page.html') }
-  let(:service)   { double('IgService', node: Nokogiri::HTML(node_page)) }
+  let(:node_data) { YAML.safe_load(open('./spec/fixtures/node_data.yml')) }
+  let(:service)   { double('IgService', node: node_data) }
 
   describe '#data' do
     subject(:mocked_node) { described_class.new('caioertai', service: service) }

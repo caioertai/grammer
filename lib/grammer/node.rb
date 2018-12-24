@@ -13,11 +13,7 @@ module Grammer
     private
 
     def extract_data(username)
-      page       = service.node(username)
-      script     = page.at('body script')
-      json_block = script.text.match(/({.*})/)[1]
-      json       = JSON.parse(json_block)
-      json.dig('entry_data', 'ProfilePage', 0, 'graphql', 'user')
+      service.node(username)
     end
   end
 end
