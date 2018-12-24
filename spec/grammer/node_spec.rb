@@ -7,7 +7,7 @@ describe Grammer::Node do
   let(:service)   { double('IgService', node: Nokogiri::HTML(node_page)) }
 
   describe '#data' do
-    subject(:mocked_node) { described_class.new('given_username', service: service) }
+    subject(:mocked_node) { described_class.new('caioertai', service: service) }
 
     it 'returns a hash of the given user' do
       expect(mocked_node.data).to be_a(Hash)
