@@ -16,7 +16,11 @@ module Grammer
     def grammed_by(method, options = {})
       mod = get_or_set(:"GammerMod#{object_id}")
       mod.class_eval do
-        define_method(options[:on]) { Node.new(method) }
+        define_method(options[:on]) do
+          username = instance_variable_get("@#{method}")
+          instance_variable_set("@#{options[:on]}", Node.new(username)) unless instance_variable_get("@#{options[:on]}")
+          instance_variable_get("@#{options[:on]}")
+        end
       end
       prepend mod
     end
