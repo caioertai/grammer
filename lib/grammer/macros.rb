@@ -13,19 +13,10 @@ module Grammer
       const_get(instance_var)
     end
 
-    def grammed_by(*methods)
+    def grammed_by(method, options = {})
       mod = get_or_set(:"GammerMod#{object_id}")
       mod.class_eval do
-        methods.each do |method|
-          define_method(method) do
-            @_grammer_methods ||= {}
-            if @_grammer_methods.include?(method)
-              @_grammer_methods[method]
-            else
-              @_grammer_methods[method] = super()
-            end
-          end
-        end
+        define_method(options[:on]) { Node.new(method) }
       end
       prepend mod
     end
