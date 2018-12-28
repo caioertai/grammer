@@ -3,11 +3,7 @@
 require 'spec_helper'
 
 class TestUser
-  attr_reader :ig
-  grammed_by :ig
-  def initialize(username)
-    @ig = username
-  end
+  include Grammer
 end
 
 describe Grammer do

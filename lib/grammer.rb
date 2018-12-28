@@ -6,5 +6,6 @@ module Grammer
   require 'nokogiri'
 
   require 'grammer/ig_service'
+  require 'grammer/macros'
   require 'grammer/node'
 end
