@@ -19,7 +19,13 @@ module Grammer
         define_method(options[:on]) do
           username = instance_variable_get("@#{method}")
           instance_var = "@#{options[:on]}"
-          instance_variable_set(instance_var, Node.new(username)) unless instance_variable_get(instance_var)
+
+          unless instance_variable_get(instance_var)
+            instance_variable_set(
+              instance_var,
+              Node.new(username, service: options[:service])
+            )
+          end
           instance_variable_get(instance_var)
         end
       end
