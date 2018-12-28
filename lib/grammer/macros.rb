@@ -8,18 +8,19 @@ module Grammer
 
   # Defines class macros
   module Macros
-    def get_or_set(instance_var)
-      const_set(instance_var, Module.new) unless const_defined?(instance_var)
-      const_get(instance_var)
+    def get_or_set_const(module_name)
+      const_set(module_name, Module.new) unless const_defined?(module_name)
+      const_get(module_name)
     end
 
     def grammed_by(method, options = {})
-      mod = get_or_set(:"GammerMod#{object_id}")
+      mod = get_or_set_const(:"GammerMod#{object_id}")
       mod.class_eval do
         define_method(options[:on]) do
           username = instance_variable_get("@#{method}")
-          instance_variable_set("@#{options[:on]}", Node.new(username)) unless instance_variable_get("@#{options[:on]}")
-          instance_variable_get("@#{options[:on]}")
+          instance_var = "@#{options[:on]}"
+          instance_variable_set(instance_var, Node.new(username)) unless instance_variable_get(instance_var)
+          instance_variable_get(instance_var)
         end
       end
       prepend mod
