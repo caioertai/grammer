@@ -32,10 +32,6 @@ describe Grammer do
       it 'returns a Node object' do
         expect(test_user.ig).to be_a(Grammer::Node)
       end
-
-      it 'has the correct data' do
-        expect(test_user.ig.data).to eq(node_data)
-      end
     end
   end
 end

@@ -17,6 +17,10 @@ describe Grammer::Node do
     it 'returns a hash of the given user' do
       expect(mocked_node.data).to be_a(Hash)
     end
+
+    it 'returns the correct data' do
+      expect(mocked_node.data).to eq(node_data)
+    end
   end
 
   describe '#biography' do
