@@ -9,7 +9,7 @@ describe Grammer::Node do
 
   describe '#initialize' do
     it 'initializes with custom service object' do
-      expect{ described_class.new('caioertai', service: service) }.not_to raise_error
+      expect { described_class.new('caioertai', service: service) }.not_to raise_error
     end
   end
 
