@@ -26,14 +26,23 @@ describe Grammer::Node do
   describe 'data forwarding methods' do
     describe '#biography' do
       it 'returns node biography' do
-        expect(mocked_node.biography).to eq('User Bio')
+        custom_node = node_with_data('biography' => 'Biography of the user')
+        expect(custom_node.biography).to eq('Biography of the user')
       end
     end
 
     describe '#followers_count' do
       it 'returns node followers count' do
-        expect(mocked_node.followers_count).to eq(24)
+        custom_node = node_with_data('edge_followed_by' => { 'count' => 24 })
+        expect(custom_node.followers_count).to eq(24)
       end
     end
+  end
+
+  private
+
+  def node_with_data(custom_node_data)
+    custom_service = double('IgService', node: custom_node_data)
+    described_class.new('caioertai', service: custom_service)
   end
 end
