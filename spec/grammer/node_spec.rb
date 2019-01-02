@@ -7,13 +7,13 @@ describe Grammer::Node do
   let(:service)         { double('IgService', node: node_data) }
   subject(:mocked_node) { described_class.new('caioertai', service: service) }
 
-  describe '#initialize' do
+  context '#initialize' do
     it 'initializes with custom service object' do
       expect { described_class.new('caioertai', service: service) }.not_to raise_error
     end
   end
 
-  describe '#data' do
+  context '#data' do
     it 'returns a hash of the given user' do
       expect(mocked_node.data).to be_a(Hash)
     end
@@ -23,15 +23,15 @@ describe Grammer::Node do
     end
   end
 
-  describe 'data forwarding methods' do
-    describe '#biography' do
+  context 'data forwarding methods' do
+    context '#biography' do
       it 'returns node biography' do
         custom_node = node_with_data('biography' => 'Biography of the user')
         expect(custom_node.biography).to eq('Biography of the user')
       end
     end
 
-    describe '#followers_count' do
+    context '#followers_count' do
       it 'returns node followers count' do
         custom_node = node_with_data('edge_followed_by' => { 'count' => 24 })
         expect(custom_node.followers_count).to eq(24)
