@@ -11,7 +11,11 @@ module Grammer
     end
 
     def biography
-      @data['biography']
+      @data.dig('biography')
+    end
+
+    def followers_count
+      @data.dig('edge_followed_by', 'count')
     end
   end
 end

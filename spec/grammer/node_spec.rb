@@ -23,9 +23,17 @@ describe Grammer::Node do
     end
   end
 
-  describe '#biography' do
-    it 'returns user biography' do
-      expect(mocked_node.biography).to eq('User Bio')
+  describe 'data forwarding methods' do
+    describe '#biography' do
+      it 'returns node biography' do
+        expect(mocked_node.biography).to eq('User Bio')
+      end
+    end
+
+    describe '#followers_count' do
+      it 'returns node followers count' do
+        expect(mocked_node.followers_count).to eq(24)
+      end
     end
   end
 end
