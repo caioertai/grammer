@@ -14,8 +14,8 @@ Gem::Specification.new do |s|
 
   s.extra_rdoc_files = %w[README.md]
 
-  s.add_development('httparty', '>= 0.16.3')
-  s.add_development('nokogiri', '>= 1.8.2')
+  s.add_dependency('httparty', '>= 0.16.3')
+  s.add_dependency('nokogiri', '>= 1.8.2')
   s.add_development_dependency('rspec', '~> 3.0')
 
   s.files = %w[README.md MIT-LICENSE] + Dir.glob('lib/**/*')
