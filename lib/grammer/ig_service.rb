@@ -8,7 +8,7 @@ module Grammer
 
     def node(username)
       page = self.class.get("/#{username}")
-      json = Nokogiri::HTML(page)
+      json = Nokogiri.parse(page)
                      .at('body script')
                      .text.match(/({.*})/)[1]
       JSON.parse(json)
