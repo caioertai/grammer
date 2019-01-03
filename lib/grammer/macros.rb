@@ -17,7 +17,7 @@ module Grammer
       mod = get_or_set_const(:"GammerMod#{object_id}")
       mod.class_eval do
         define_method(options[:on]) do
-          username = instance_variable_get("@#{method}")
+          username = send(method)
           instance_var = "@#{options[:on]}"
 
           unless instance_variable_get(instance_var)

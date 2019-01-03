@@ -13,6 +13,7 @@ describe Grammer do
 
     before(:each) do
       class TestUser
+        attr_reader :username
         def initialize(username)
           @username = username
         end
