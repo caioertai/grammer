@@ -12,6 +12,7 @@ describe Grammer do
     let(:test_user) { TestUser.new('caioertai') }
 
     before(:each) do
+      # Test class for module inclusion
       class TestUser
         attr_reader :username
         def initialize(username)

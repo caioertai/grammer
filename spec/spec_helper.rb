@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+# Simplecov
+require 'simplecov'
+SimpleCov.start
+
 require File.expand_path('environment', __dir__)
 
 RSpec.configure do |config|
