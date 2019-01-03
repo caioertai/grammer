@@ -7,8 +7,8 @@ describe Grammer::IgService do
 
   context '#node' do
     it 'returns empty hash when no instagram user was found' do
-      Nokogiri = double('Nokogiri')
-      allow(Nokogiri).to receive_message_chain(:parse, :at, :text, :match, '[]') { '{}' }
+      not_found_page = File.read('spec/fixtures/instagram_user_not_found.html')
+      allow(described_class).to receive_message_chain(:get) { not_found_page }
       expect(subject.node('salkdjaslkjf')).to eq({})
     end
   end
