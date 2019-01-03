@@ -12,7 +12,7 @@ module Grammer
                      .at('body script')
                      .text.match(/({.*})/)[1]
       JSON.parse(json)
-          .dig('entry_data', 'ProfilePage', 0, 'graphql', 'user')
+          .dig('entry_data', 'ProfilePage', 0, 'graphql', 'user') || {}
     end
   end
 end
