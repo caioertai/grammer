@@ -11,6 +11,7 @@ module Grammer
     end
 
     def media
+      []
     end
 
     def biography

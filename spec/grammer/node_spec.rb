@@ -11,7 +11,6 @@ describe Grammer::Node do
   end
 
   context '#data' do
-
     it 'returns a hash of the given user' do
       expect(mocked_node.data).to be_a(Hash)
     end
@@ -23,7 +22,7 @@ describe Grammer::Node do
 
   context '#media' do
     it 'returns an array of media' do
-      expect(mocked_node.media[0]).to be_a(Grammer::Node::Media)
+      expect(mocked_node.media[0]).to be_a(Grammer::Media)
     end
   end
 
