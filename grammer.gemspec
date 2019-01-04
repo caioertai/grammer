@@ -15,8 +15,9 @@ Gem::Specification.new do |s|
   # s.homepage    = 'https://github.com/caioertai/grammer'
   s.license     = 'MIT'
 
-  s.add_runtime_dependency 'httparty', '~> 0.16', '>= 0.16.3'
-  s.add_runtime_dependency 'nokogiri', '~> 1.8', '>= 1.8.2'
+  s.add_runtime_dependency('httparty', '~> 0.16', '>= 0.16.3')
+  s.add_runtime_dependency('nokogiri', '~> 1.8', '>= 1.8.2')
+
   s.add_development_dependency('pry-byebug', '~> 3.6')
   s.add_development_dependency('reek', '~> 4.8')
   s.add_development_dependency('rspec', '~> 3.0')
