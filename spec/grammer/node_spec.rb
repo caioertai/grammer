@@ -5,12 +5,12 @@ require 'spec_helper'
 describe Grammer::Node do
   let(:node_data)       { YAML.safe_load(open('./spec/fixtures/node_data.yml')) }
   subject(:mocked_node) { described_class.new('caioertai') }
+  before(:each) do
+    page = File.read('spec/fixtures/node_page.html')
+    allow(Grammer::IgService).to receive_message_chain(:get) { page }
+  end
 
   context '#data' do
-    before(:each) do
-      page = File.read('spec/fixtures/node_page.html')
-      allow(Grammer::IgService).to receive_message_chain(:get) { page }
-    end
 
     it 'returns a hash of the given user' do
       expect(mocked_node.data).to be_a(Hash)
@@ -21,11 +21,11 @@ describe Grammer::Node do
     end
   end
 
-  # context '#media' do
-  #   it 'returns an array of media' do
-  #     expect(mocked_node.media[0]).to be_a(Grammer::Node::Media)
-  #   end
-  # end
+  context '#media' do
+    it 'returns an array of media' do
+      expect(mocked_node.media[0]).to be_a(Grammer::Node::Media)
+    end
+  end
 
   context 'data forwarding methods' do
     context '#biography' do
