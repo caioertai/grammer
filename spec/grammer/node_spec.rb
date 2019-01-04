@@ -23,6 +23,12 @@ describe Grammer::Node do
     end
   end
 
+  context '#media' do
+    it 'returns an array of media' do
+      expect(mocked_node.media[0]).to be_a(Grammer::Node::Media)
+    end
+  end
+
   context 'data forwarding methods' do
     context '#biography' do
       it 'returns node biography' do
