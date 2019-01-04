@@ -9,7 +9,9 @@ task default: :spec
 desc 'Loads console with gem available'
 task :console do
   require 'pry-byebug'
-  require './lib/grammer.rb'
+
+  $LOAD_PATH.unshift(File.dirname(__FILE__) + '/lib')
+  require 'grammer'
   Pry.start
 end
 task c: :console
