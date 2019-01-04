@@ -21,14 +21,13 @@ module Grammer
           username = send(method)
           instance_var = "@#{target_attribute}"
 
-          instance_var_value = instance_variable_get(instance_var)
-          unless instance_var_value
+          unless instance_variable_defined?(instance_var)
             instance_variable_set(
               instance_var,
               Node.new(username, service: options[:service])
             )
           end
-          instance_var_value
+          instance_variable_get(instance_var)
         end
       end
       prepend mod
