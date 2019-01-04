@@ -9,5 +9,6 @@ gem 'httparty'
 gem 'nokogiri'
 gem 'rspec'
 gem 'rubocop'
-gem 'rubycritic', require: false
+gem 'pry-byebug', require: false
+gem 'reek', require: false
 gem 'simplecov', require: false, group: :test
