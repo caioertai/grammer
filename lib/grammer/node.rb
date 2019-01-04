@@ -11,7 +11,7 @@ module Grammer
     end
 
     def media
-      []
+      [Media.new]
     end
 
     def biography

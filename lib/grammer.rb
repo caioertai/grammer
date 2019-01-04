@@ -7,5 +7,6 @@ module Grammer
 
   require 'grammer/ig_service'
   require 'grammer/macros'
+  require 'grammer/media'
   require 'grammer/node'
 end
