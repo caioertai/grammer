@@ -11,7 +11,8 @@ module Grammer
     end
 
     def media
-      [Media.new]
+      # TODO: apply dependency injection
+      Media.all_from(self)
     end
 
     def biography
