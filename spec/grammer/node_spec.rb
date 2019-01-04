@@ -4,30 +4,28 @@ require 'spec_helper'
 
 describe Grammer::Node do
   let(:node_data)       { YAML.safe_load(open('./spec/fixtures/node_data.yml')) }
-  let(:service)         { double('IgService', node: node_data) }
-  subject(:mocked_node) { described_class.new('caioertai', service: service) }
-
-  context '#initialize' do
-    it 'initializes with custom service object' do
-      expect { described_class.new('caioertai', service: service) }.not_to raise_error
-    end
-  end
+  subject(:mocked_node) { described_class.new('caioertai') }
 
   context '#data' do
+    before(:each) do
+      page = File.read('spec/fixtures/node_page.html')
+      allow(Grammer::IgService).to receive_message_chain(:get) { page }
+    end
+
     it 'returns a hash of the given user' do
       expect(mocked_node.data).to be_a(Hash)
     end
 
     it 'returns the correct data' do
-      expect(mocked_node.data).to eq(node_data)
+      expect(mocked_node.data['biography']).to eq('User Bio')
     end
   end
 
-  context '#media' do
-    it 'returns an array of media' do
-      expect(mocked_node.media[0]).to be_a(Grammer::Node::Media)
-    end
-  end
+  # context '#media' do
+  #   it 'returns an array of media' do
+  #     expect(mocked_node.media[0]).to be_a(Grammer::Node::Media)
+  #   end
+  # end
 
   context 'data forwarding methods' do
     context '#biography' do

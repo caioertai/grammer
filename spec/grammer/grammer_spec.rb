@@ -4,7 +4,6 @@ require 'spec_helper'
 
 describe Grammer do
   let(:node_data)       { YAML.safe_load(open('./spec/fixtures/node_data.yml')) }
-  let(:service)         { double('IgService', node: node_data) }
 
   it { expect { Grammer }.not_to raise_error }
 
@@ -12,6 +11,9 @@ describe Grammer do
     let(:test_user) { TestUser.new('caioertai') }
 
     before(:each) do
+      page = File.read('spec/fixtures/node_page.html')
+      allow(Grammer::IgService).to receive_message_chain(:get) { page }
+
       # Test class for module inclusion
       class TestUser
         attr_reader :username
@@ -23,9 +25,8 @@ describe Grammer do
       end
 
       # The following was needed to flat scope the class definition
-      service_obj = service
       TestUser.instance_eval do
-        grammed_by :username, on: :ig, service: service_obj
+        grammed_by :username, on: :ig
       end
     end
 

@@ -10,6 +10,9 @@ module Grammer
       @data    = service.node(username)
     end
 
+    def media
+    end
+
     def biography
       @data.dig('biography')
     end
