@@ -15,6 +15,10 @@ module Grammer
       data.dig('edge_liked_by', 'count')
     end
 
+    def video?
+      data.dig('is_video')
+    end
+
     def self.all_from(node)
       node.data.dig('edge_owner_to_timeline_media', 'edges').map do |media|
         new(media.dig('node'))
