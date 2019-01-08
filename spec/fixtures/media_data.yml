@@ -1,0 +1,46 @@
+---
+__typename: GraphImage
+id: '1928521956144316381'
+edge_media_to_caption:
+  edges:
+  - node:
+      text: Estamos listos para nuestro siguiente batch en la CDMX, sigue las fechas
+        en www.lewagon.com
+shortcode: BrDfIBZhf_d
+edge_media_to_comment:
+  count: 2
+comments_disabled: false
+taken_at_timestamp: 1544117753
+dimensions:
+  height: 720
+  width: 1080
+display_url: https://instagram.fsdu5-1.fna.fbcdn.net/vp/cba28971da05f0f61f25bb95506c1ebe/5CB3105D/t51.2885-15/e35/45635009_115077216187833_8028711046581196436_n.jpg?_nc_ht=instagram.fsdu5-1.fna.fbcdn.net
+edge_liked_by:
+  count: 48
+edge_media_preview_like:
+  count: 48
+location: 
+gating_info: 
+media_preview: ACocmcBBk1GYtwz61ZJDcHmlGOlMDKlhAGfSs9ZCyiJQTkkkepP/ANb/ADzWxecxkL1PH+fwrNgi8tg3UgZx75I/SjzDZ2e5TYMDjBFJsPoavSAtJ0wW5p+1hSA1BG57H9P8acIZPT9a2BGo7U8ACmBlraFgAxII9AD/ADFMOlLncGOcEenX6d62KSl5Bu79TGGlruDMSSvAx0x+XvT/AOzk9W/T/CtWkpgf/9k=
+owner:
+  id: '7555927311'
+  username: lewagonmx
+thumbnail_src: https://instagram.fsdu5-1.fna.fbcdn.net/vp/95ca46239b7ad9534f5a4f4cc706422c/5CD8C482/t51.2885-15/sh0.08/e35/c180.0.720.720/s640x640/45635009_115077216187833_8028711046581196436_n.jpg?_nc_ht=instagram.fsdu5-1.fna.fbcdn.net
+thumbnail_resources:
+- src: https://instagram.fsdu5-1.fna.fbcdn.net/vp/1aa0fa11f1510676517f9e897eb28ef1/5CD50088/t51.2885-15/e35/c180.0.720.720/s150x150/45635009_115077216187833_8028711046581196436_n.jpg?_nc_ht=instagram.fsdu5-1.fna.fbcdn.net
+  config_width: 150
+  config_height: 150
+- src: https://instagram.fsdu5-1.fna.fbcdn.net/vp/56575647cdd2c2e8f20b09fbc822f3cc/5CCF78C2/t51.2885-15/e35/c180.0.720.720/s240x240/45635009_115077216187833_8028711046581196436_n.jpg?_nc_ht=instagram.fsdu5-1.fna.fbcdn.net
+  config_width: 240
+  config_height: 240
+- src: https://instagram.fsdu5-1.fna.fbcdn.net/vp/bd109dbfbb4aad2eb31f906343567ef4/5CCA1678/t51.2885-15/e35/c180.0.720.720/s320x320/45635009_115077216187833_8028711046581196436_n.jpg?_nc_ht=instagram.fsdu5-1.fna.fbcdn.net
+  config_width: 320
+  config_height: 320
+- src: https://instagram.fsdu5-1.fna.fbcdn.net/vp/bb4845ec80e5a34c2825ab2d3f0f9148/5CD5F722/t51.2885-15/e35/c180.0.720.720/s480x480/45635009_115077216187833_8028711046581196436_n.jpg?_nc_ht=instagram.fsdu5-1.fna.fbcdn.net
+  config_width: 480
+  config_height: 480
+- src: https://instagram.fsdu5-1.fna.fbcdn.net/vp/95ca46239b7ad9534f5a4f4cc706422c/5CD8C482/t51.2885-15/sh0.08/e35/c180.0.720.720/s640x640/45635009_115077216187833_8028711046581196436_n.jpg?_nc_ht=instagram.fsdu5-1.fna.fbcdn.net
+  config_width: 640
+  config_height: 640
+is_video: false
+accessibility_caption: No photo description available.

@@ -2,13 +2,22 @@
 
 module Grammer
   class Media
+    attr_reader :data
     def initialize(media_data)
-      
+      @data = media_data
+    end
+
+    def image_url
+      data.dig('display_url')
+    end
+
+    def likes_count
+      data.dig('edge_liked_by', 'count')
     end
 
     def self.all_from(node)
       node.data.dig('edge_owner_to_timeline_media', 'edges').map do |media|
-        new(media)
+        new(media.dig('node'))
       end
     end
   end
