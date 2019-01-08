@@ -3,8 +3,6 @@
 require 'spec_helper'
 
 describe Grammer::Media do
-  let(:media_data) { YAML.safe_load(open('./spec/fixtures/media_data.yml')) }
-
   before(:each) do
     page = File.read('spec/fixtures/node_page.html')
     allow(Grammer::IgService).to receive_message_chain(:get) { page }
@@ -13,8 +11,9 @@ describe Grammer::Media do
   context 'data forwarding methods' do
     context '#likes_count' do
       it 'returns media likes count' do
-        likes_count = described_class.new(media_data).likes_count
-        expect(likes_count).to eql(48)
+        likes_count_data = { 'edge_liked_by' => { 'count' => 123 } }
+        likes_count = described_class.new(likes_count_data).likes_count
+        expect(likes_count).to eql(123)
       end
     end
   end
