@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 module Grammer
-  # Represents Instagram nodes (Users)
+  ##
+  # Represents Instagram nodes (accounts)
   class Node
     attr_reader :data, :service
 
