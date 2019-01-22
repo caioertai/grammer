@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency('nokogiri', '~> 1.8', '>= 1.8.2')
 
   s.add_development_dependency('pry-byebug', '~> 3.6')
+  s.add_development_dependency('rdoc', '~> 6.1')
   s.add_development_dependency('reek', '~> 4.8')
   s.add_development_dependency('rspec', '~> 3.0')
   s.add_development_dependency('rubocop', '~> 0.62.0')
