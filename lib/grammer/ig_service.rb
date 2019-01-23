@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 
 module Grammer
+  ##
   # Handles Ig Requests
   class IgService
     include HTTParty
     base_uri 'https://www.instagram.com'
 
+    ##
+    # Requests Instagram node information with a given username.
     def node(username)
       page = self.class.get("/#{username}")
       json = Nokogiri.parse(page)
