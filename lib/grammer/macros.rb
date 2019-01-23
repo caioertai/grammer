@@ -1,11 +1,7 @@
 # frozen_string_literal: true
 
-# Adds class macros to top level module
 module Grammer
-  def self.included(klass)
-    klass.extend(Macros)
-  end
-
+  ##
   # Defines class macros
   module Macros
     def get_or_set_const(module_name)
