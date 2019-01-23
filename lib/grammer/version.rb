@@ -6,7 +6,7 @@ module Grammer
   # Describes version for gemspec
   module VERSION
     MAJOR = 0
-    MINOR = 1
+    MINOR = 2
     PATCH = 1
     BUILD = 'edge'
 
