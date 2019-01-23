@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module Grammer
+  ##
+  # = Version
   # Describes version for gemspec
   module VERSION
     MAJOR = 0

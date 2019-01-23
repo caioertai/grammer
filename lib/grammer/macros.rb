@@ -2,8 +2,11 @@
 
 module Grammer
   ##
+  # = Macros
   # Defines class macros
   module Macros
+    ##
+    # Gets constant value or sets it if it haven't been defined before.
     def get_or_set_const(module_name)
       if const_defined?(module_name)
         const_get(module_name)
@@ -12,6 +15,8 @@ module Grammer
       end
     end
 
+    ##
+    # Defines methods on singleton modules in order to handle macros
     def define_module_method(mod, method_name, opts)
       mod.class_eval do
         target_attribute = opts[:on]
@@ -27,17 +32,13 @@ module Grammer
       end
     end
 
+    ##
+    # Main initializing class macro for the module.
+    # Defines a Node instance on the given name.
     def grammed_by(method_name, opts = {})
       mod = get_or_set_const(:"GammerMod#{object_id}")
       define_module_method(mod, method_name, opts)
       prepend mod
-    end
-
-    def grammed_by_class_method(*methods)
-      singleton_class.class_eval do
-        include Grammer
-        grammed_by(*methods)
-      end
     end
   end
 end

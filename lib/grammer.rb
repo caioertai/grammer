@@ -10,6 +10,8 @@ module Grammer
   require 'grammer/macros'
   require 'grammer/node'
 
+  ##
+  # Extends class macros to main module 
   def self.included(klass)
     klass.extend(Macros)
   end
