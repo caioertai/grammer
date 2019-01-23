@@ -5,7 +5,13 @@ module Grammer
   # = Node
   # Represents Instagram nodes (accounts)
   class Node
-    attr_reader :data, :service
+    ##
+    # General Instagram hash of data from the node
+    attr_reader :data
+
+    ##
+    # Service used for requesting instagram info
+    attr_reader :service
 
     ##
     # Creates a new instagram node defined by its username.
