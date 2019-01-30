@@ -13,3 +13,4 @@ gem 'rubocop'
 gem 'pry-byebug', require: false
 gem 'reek', require: false
 gem 'simplecov', require: false, group: :test
+gem 'simplecov-console', require: false, group: :test
