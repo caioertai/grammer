@@ -2,6 +2,8 @@
 
 # Simplecov
 require 'simplecov'
+require 'simplecov-console'
+SimpleCov.formatter = SimpleCov::Formatter::Console
 SimpleCov.start
 
 require File.expand_path('environment', __dir__)

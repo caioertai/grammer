@@ -1,5 +1,6 @@
 [![Gem Version](https://badge.fury.io/rb/grammer.svg)](https://badge.fury.io/rb/grammer)
 [![Maintainability](https://api.codeclimate.com/v1/badges/57a19b2186210fd18d19/maintainability)](https://codeclimate.com/github/caioertai/grammer/maintainability)
+[![Build Status](https://travis-ci.org/caioertai/grammer.svg?branch=master)](https://travis-ci.org/caioertai/grammer)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 Grammer
