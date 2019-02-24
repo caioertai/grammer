@@ -3,8 +3,8 @@
 require 'spec_helper'
 
 describe Grammer do
-  let(:node_data)       { YAML.safe_load(open('./spec/fixtures/node_data.yml')) }
-  let(:service)         { double('IgService', node: node_data) }
+  let(:node_data) { YAML.safe_load(open('./spec/fixtures/node_data.yml')) }
+  let(:service)   { double('IgService', node: node_data) }
 
   it { expect { Grammer }.not_to raise_error }
 
