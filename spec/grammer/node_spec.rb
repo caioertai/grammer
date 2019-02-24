@@ -3,13 +3,14 @@
 require 'spec_helper'
 
 describe Grammer::Node do
-  let(:node_data)       { YAML.safe_load(open('./spec/fixtures/node_data.yml')) }
-  let(:service)         { double('IgService', node: node_data) }
   subject(:mocked_node) { described_class.new('caioertai', service: service) }
+  let(:node_data) { YAML.safe_load(open('./spec/fixtures/node_data.yml')) }
+  let(:service) { double('IgService', node: node_data) }
 
   context '#initialize' do
     it 'initializes with custom service object' do
-      expect { described_class.new('caioertai', service: service) }.not_to raise_error
+      expect { described_class.new('caioertai', service: service) }
+        .not_to raise_error
     end
   end
 

@@ -8,12 +8,12 @@ Gem::Specification.new do |s|
   s.author      = 'Caio Andrade'
   s.email       = 'caioertai@gmail.com'
   s.homepage    = 'http://rubygems.org/gems/grammer'
-  # s.homepage    = 'https://github.com/caioertai/grammer'
-  s.description = 'Provides a simple way to connect objects to the info on a Instagram account.'
   s.summary     = 'Instragram basic info scraping handler.'
   s.license     = 'MIT'
-
   s.files       = [] + Dir.glob('lib/**/*')
+  s.description = <<-DESC
+    Provides a simple way to connect objects to the info on a Instagram account.'
+  DESC
 
   s.extra_rdoc_files = %w[README.md]
   s.rdoc_options << 'lib/' << '--exclude' << 'lib/grammer/version.rb'

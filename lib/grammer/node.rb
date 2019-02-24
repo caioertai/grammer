@@ -21,6 +21,12 @@ module Grammer
     end
 
     ##
+    # Helper for displaying node's id
+    def id
+      @data.dig('id')
+    end
+
+    ##
     # Helper for displaying node's biography
     def biography
       @data.dig('biography')
