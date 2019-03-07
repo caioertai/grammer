@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Grammer::VERSION::STRING
   s.author      = 'Caio Andrade'
   s.email       = 'caioertai@gmail.com'
-  s.homepage    = 'http://rubygems.org/gems/grammer'
+  s.homepage    = 'https://github.com/caioertai/grammer'
   s.summary     = 'Instragram basic info scraping handler.'
   s.license     = 'MIT'
   s.files       = [] + Dir.glob('lib/**/*')
