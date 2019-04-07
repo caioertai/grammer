@@ -21,21 +21,39 @@ module Grammer
     end
 
     ##
-    # Helper for displaying node's id
+    # Returns node's id
     def id
       @data.dig('id')
     end
 
     ##
-    # Helper for displaying node's biography
+    # Returns node's biography
     def biography
       @data.dig('biography')
     end
 
     ##
-    # Helper for displaying node's followers count
+    # Returns node's followers count
     def followers_count
       @data.dig('edge_followed_by', 'count')
+    end
+
+    ##
+    # Returns node's username
+    def username
+      @data.dig('username')
+    end
+
+    ##
+    # Returns node's is_private
+    def private?
+      @data.dig('is_private')
+    end
+
+    ##
+    # Returns node's is_verified
+    def verified?
+      @data.dig('is_verified')
     end
   end
 end

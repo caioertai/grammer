@@ -18,16 +18,10 @@ module Grammer
     ##
     # Main initializing class macro for the module.
     # Defines a Node instance on the given name.
-    def grammed_by(method_name, opts = {})
+    def grammed_by(method_name, options = {})
       mod = get_or_set_const(:"GammerMod#{object_id}")
-      define_module_method(mod, method_name, opts)
+      mod.class_exec(method_name, options, &Grammer::MacroHandler::DEFINE)
       prepend mod
-    end
-
-    private
-
-    def define_module_method(mod, method_name, opts)
-      mod.class_exec(method_name, opts, &Grammer::MacroHandler::DEFINE)
     end
   end
 end

@@ -2,6 +2,15 @@
 
 require 'spec_helper'
 
+def data_forwarding_spec_for(method_name, hash_location)
+  context "##{method_name}" do
+    it "returns node #{hash_location}" do
+      custom_node = node_with_data(hash_location => true)
+      expect(custom_node.send(method_name)).to eq(true)
+    end
+  end
+end
+
 describe Grammer::Node do
   subject(:mocked_node) { described_class.new('caioertai', service: service) }
   let(:node_data) { YAML.safe_load(open('./spec/fixtures/node_data.yml')) }
@@ -38,6 +47,22 @@ describe Grammer::Node do
         expect(custom_node.followers_count).to eq(24)
       end
     end
+
+    context '#username' do
+      it 'returns node username' do
+        custom_node = node_with_data('username' => 'node_username')
+        expect(custom_node.username).to eq('node_username')
+      end
+    end
+
+    context '#private?' do
+      it 'returns node privacy status' do
+        custom_node = node_with_data('is_private' => true)
+        expect(custom_node.private?).to eq(true)
+      end
+    end
+
+    data_forwarding_spec_for('verified?', 'is_verified')
   end
 
   private
