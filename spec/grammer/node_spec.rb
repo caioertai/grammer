@@ -2,11 +2,11 @@
 
 require 'spec_helper'
 
-def data_forwarding_spec_for(method_name, hash_location)
+def data_forwarding_spec_for(method_name, path: nil, value: 'default')
   context "##{method_name}" do
-    it "returns node #{hash_location}" do
-      custom_node = node_with_data(hash_location => true)
-      expect(custom_node.send(method_name)).to eq(true)
+    it "returns node #{path}" do
+      data = [path].flatten.reverse.inject(value) { |mem, key| { key => mem } }
+      expect(node_with_data(data).send(method_name)).to eq(value)
     end
   end
 end
@@ -34,35 +34,11 @@ describe Grammer::Node do
   end
 
   context 'data forwarding methods' do
-    context '#biography' do
-      it 'returns node biography' do
-        custom_node = node_with_data('biography' => 'Biography of the user')
-        expect(custom_node.biography).to eq('Biography of the user')
-      end
-    end
-
-    context '#followers_count' do
-      it 'returns node followers count' do
-        custom_node = node_with_data('edge_followed_by' => { 'count' => 24 })
-        expect(custom_node.followers_count).to eq(24)
-      end
-    end
-
-    context '#username' do
-      it 'returns node username' do
-        custom_node = node_with_data('username' => 'node_username')
-        expect(custom_node.username).to eq('node_username')
-      end
-    end
-
-    context '#private?' do
-      it 'returns node privacy status' do
-        custom_node = node_with_data('is_private' => true)
-        expect(custom_node.private?).to eq(true)
-      end
-    end
-
-    data_forwarding_spec_for('verified?', 'is_verified')
+    data_forwarding_spec_for('biography', path: 'biography')
+    data_forwarding_spec_for('followers_count', path: %w[edge_followed_by count])
+    data_forwarding_spec_for('username', path: 'username')
+    data_forwarding_spec_for('private?', path: 'is_private')
+    data_forwarding_spec_for('verified?', path: 'is_verified')
   end
 
   private
