@@ -20,40 +20,19 @@ module Grammer
       @data    = service.node(username)
     end
 
-    ##
-    # Returns node's id
-    def id
-      @data.dig('id')
-    end
+    DATA_PATHS = {
+      id: 'id',
+      biography: 'biography',
+      followers_count: %w[edge_followed_by count],
+      username: 'username',
+      private?: 'is_private',
+      verified?: 'is_verified'
+    }.freeze
 
-    ##
-    # Returns node's biography
-    def biography
-      @data.dig('biography')
-    end
-
-    ##
-    # Returns node's followers count
-    def followers_count
-      @data.dig('edge_followed_by', 'count')
-    end
-
-    ##
-    # Returns node's username
-    def username
-      @data.dig('username')
-    end
-
-    ##
-    # Returns node's is_private
-    def private?
-      @data.dig('is_private')
-    end
-
-    ##
-    # Returns node's is_verified
-    def verified?
-      @data.dig('is_verified')
+    DATA_PATHS.each do |method_name, path|
+      define_method(method_name) do
+        @data.dig(*path)
+      end
     end
   end
 end
