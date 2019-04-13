@@ -23,5 +23,11 @@ module Grammer
       mod.class_exec(method_name, options, &Grammer::MacroHandler::DEFINE)
       prepend mod
     end
+
+    private
+
+    def define_module_method(mod, method_name, opts)
+      mod.class_exec(method_name, opts, &Grammer::MacroHandler::DEFINE)
+    end
   end
 end
