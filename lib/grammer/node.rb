@@ -21,11 +21,14 @@ module Grammer
     end
 
     DATA_PATHS = {
-      id: 'id',
       biography: 'biography',
+      business?: 'is_business_account',
       followers_count: %w[edge_followed_by count],
-      username: 'username',
+      following_count: %w[edge_follow count],
+      full_name: 'full_name',
+      id: 'id',
       private?: 'is_private',
+      username: 'username',
       verified?: 'is_verified'
     }.freeze
 
