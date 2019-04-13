@@ -6,8 +6,8 @@ module Grammer
   # Describes version for gemspec
   module VERSION
     MAJOR = 0
-    MINOR = 2
-    PATCH = 3
+    MINOR = 3
+    PATCH = 0
     BUILD = 'edge'
 
     STRING = [MAJOR, MINOR, PATCH, BUILD].compact.join('.')
