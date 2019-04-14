@@ -2,6 +2,15 @@
 
 require 'spec_helper'
 
+def data_forwarding_spec_for(method_name, path: nil, value: 'default')
+  context "##{method_name}" do
+    it "returns node #{path}" do
+      data = [path].flatten.reverse.inject(value) { |mem, key| { key => mem } }
+      expect(node_with_data(data).send(method_name)).to eq(value)
+    end
+  end
+end
+
 describe Grammer::Node do
   subject(:mocked_node) { described_class.new('caioertai', service: service) }
   let(:node_data) { YAML.safe_load(open('./spec/fixtures/node_data.yml')) }
@@ -25,19 +34,15 @@ describe Grammer::Node do
   end
 
   context 'data forwarding methods' do
-    context '#biography' do
-      it 'returns node biography' do
-        custom_node = node_with_data('biography' => 'Biography of the user')
-        expect(custom_node.biography).to eq('Biography of the user')
-      end
-    end
-
-    context '#followers_count' do
-      it 'returns node followers count' do
-        custom_node = node_with_data('edge_followed_by' => { 'count' => 24 })
-        expect(custom_node.followers_count).to eq(24)
-      end
-    end
+    data_forwarding_spec_for('biography', path: 'biography')
+    data_forwarding_spec_for('business?', path: 'is_business_account')
+    data_forwarding_spec_for('followers_count', path: %w[edge_followed_by count])
+    data_forwarding_spec_for('following_count', path: %w[edge_follow count])
+    data_forwarding_spec_for('full_name', path: 'full_name')
+    data_forwarding_spec_for('id', path: 'id')
+    data_forwarding_spec_for('private?', path: 'is_private')
+    data_forwarding_spec_for('username', path: 'username')
+    data_forwarding_spec_for('verified?', path: 'is_verified')
   end
 
   private

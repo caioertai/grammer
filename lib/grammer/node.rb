@@ -20,22 +20,22 @@ module Grammer
       @data    = service.node(username)
     end
 
-    ##
-    # Helper for displaying node's id
-    def id
-      @data.dig('id')
-    end
+    DATA_PATHS = {
+      biography: 'biography',
+      business?: 'is_business_account',
+      followers_count: %w[edge_followed_by count],
+      following_count: %w[edge_follow count],
+      full_name: 'full_name',
+      id: 'id',
+      private?: 'is_private',
+      username: 'username',
+      verified?: 'is_verified'
+    }.freeze
 
-    ##
-    # Helper for displaying node's biography
-    def biography
-      @data.dig('biography')
-    end
-
-    ##
-    # Helper for displaying node's followers count
-    def followers_count
-      @data.dig('edge_followed_by', 'count')
+    DATA_PATHS.each do |method_name, path|
+      define_method(method_name) do
+        @data.dig(*path)
+      end
     end
   end
 end

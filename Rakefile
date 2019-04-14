@@ -12,6 +12,8 @@ task :console do
 
   $LOAD_PATH.unshift(File.dirname(__FILE__) + '/lib')
   require 'grammer'
+
+  # Default loaded user for debugging purposes
   class User
     attr_reader :username
 
