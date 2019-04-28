@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
 module Grammer
+  ##
+  # = Version
   # Describes version for gemspec
   module VERSION
     MAJOR = 0
-    MINOR = 1
+    MINOR = 3
     PATCH = 0
     BUILD = 'edge'
 

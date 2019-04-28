@@ -12,6 +12,19 @@ task :console do
 
   $LOAD_PATH.unshift(File.dirname(__FILE__) + '/lib')
   require 'grammer'
+
+  # Default loaded user for debugging purposes
+  class User
+    attr_reader :username
+
+    include Grammer
+    grammed_by :username, on: :ig
+
+    def initialize(username)
+      @username = username
+    end
+  end
+
   Pry.start
 end
 task c: :console
