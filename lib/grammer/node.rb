@@ -5,6 +5,19 @@ module Grammer
   # = Node
   # Represents Instagram nodes (accounts)
   class Node
+    extend DataForwardable
+    attr_data_forwarder(
+      biography: 'biography',
+      business?: 'is_business_account',
+      followers_count: %w[edge_followed_by count],
+      following_count: %w[edge_follow count],
+      full_name: 'full_name',
+      id: 'id',
+      private?: 'is_private',
+      username: 'username',
+      verified?: 'is_verified'
+    )
+
     ##
     # General Instagram hash of data from the node
     attr_reader :data
@@ -23,24 +36,6 @@ module Grammer
     def media
       # TODO: apply dependency injection
       Media.all_from(self)
-    end
-
-    DATA_PATHS = {
-      biography: 'biography',
-      business?: 'is_business_account',
-      followers_count: %w[edge_followed_by count],
-      following_count: %w[edge_follow count],
-      full_name: 'full_name',
-      id: 'id',
-      private?: 'is_private',
-      username: 'username',
-      verified?: 'is_verified'
-    }.freeze
-
-    DATA_PATHS.each do |method_name, path|
-      define_method(method_name) do
-        @data.dig(*path)
-      end
     end
   end
 end
