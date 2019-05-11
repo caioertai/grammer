@@ -14,6 +14,12 @@ describe Grammer do
       described_class.node('hulk', with: node_class)
       expect(node_class).to have_received(:new)
     end
+
+    it 'returns an instance of given node_class' do
+      NodeClass = Struct.new('NodeClass', :username)
+      grammer_node = described_class.node('hulk', with: NodeClass)
+      expect(grammer_node).to be_a(NodeClass)
+    end
   end
 
   context '.grammed_by class macro' do
