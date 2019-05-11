@@ -9,29 +9,9 @@ describe Grammer::Media do
   end
 
   context 'data forwarding methods' do
-    let(:media_data) do
-      {
-        'edge_liked_by' => { 'count' => 123 },
-        'display_url' => 'http://test.img',
-        'is_video' => false
-      }
-    end
-
     data_forwarding_spec_for('likes_count', path: %w[edge_liked_by count])
-
-    context '#video?' do
-      it 'returns media likes count' do
-        likes_count = described_class.new(media_data).video?
-        expect(likes_count).to eql(false)
-      end
-    end
-
-    context '#image_url' do
-      it 'returns media image url' do
-        image_url = described_class.new(media_data).image_url
-        expect(image_url).to eql('http://test.img')
-      end
-    end
+    data_forwarding_spec_for('video?', path: 'is_video')
+    data_forwarding_spec_for('image_url', path: 'display_url')
   end
 
   context '.all_from' do
