@@ -13,8 +13,8 @@ end
 
 describe Grammer::Node do
   subject(:mocked_node) { described_class.new('caioertai', service: service) }
-  let(:node_data) { YAML.safe_load(open('./spec/fixtures/node_data.yml')) }
   let(:service) { double('IgService', node: node_data) }
+  let(:node_data) { YAML.safe_load(open('./spec/fixtures/node_data.yml')) }
 
   context '#initialize' do
     it 'initializes with custom service object' do
@@ -34,8 +34,11 @@ describe Grammer::Node do
   end
 
   context '#media' do
-    it 'returns an array of media' do
-      expect(mocked_node.media[0]).to be_a(Grammer::Media)
+    it 'calls #all_from the given media class' do
+      media_class = spy('media')
+      node = described_class.new('', media_class: media_class)
+      node.media
+      expect(media_class).to have_received(:all_from)
     end
   end
 

@@ -29,13 +29,13 @@ module Grammer
     ##
     # Creates a new instagram node defined by its username.
     def initialize(username, attr = {})
-      @service = attr[:service] || IgService.new
-      @data    = service.node(username)
+      @media_class = attr[:media_class] || Media
+      @service     = attr[:service] || IgService.new
+      @data        = service.node(username)
     end
 
     def media
-      # TODO: apply dependency injection
-      Media.all_from(self)
+      @media_class.all_from(self)
     end
   end
 end
