@@ -8,6 +8,14 @@ describe Grammer do
 
   it { expect { Grammer }.not_to raise_error }
 
+  context '.node' do
+    it 'instantiates a new node from given username and node_class' do
+      node_class = spy(:node_class)
+      described_class.node('hulk', with: node_class)
+      expect(node_class).to have_received(:new)
+    end
+  end
+
   context '.grammed_by class macro' do
     let(:test_user) { TestUser.new('caioertai') }
 

@@ -15,8 +15,8 @@ module Grammer
 
   ##
   # Initializes a node with a given username
-  def self.node(username)
-    Node.new(username)
+  def self.node(username, with: Node)
+    with.new(username)
   end
 
   ##
