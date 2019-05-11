@@ -2,15 +2,6 @@
 
 require 'spec_helper'
 
-def data_forwarding_spec_for(method_name, path: nil, value: 'default')
-  context "##{method_name}" do
-    it "returns node #{path}" do
-      data = [path].flatten.reverse.inject(value) { |mem, key| { key => mem } }
-      expect(node_with_data(data).send(method_name)).to eq(value)
-    end
-  end
-end
-
 describe Grammer::Node do
   subject(:mocked_node) { described_class.new('caioertai', service: service) }
   let(:service) { double('IgService', node: node_data) }
