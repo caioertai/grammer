@@ -17,12 +17,7 @@ describe Grammer::Media do
       }
     end
 
-    context '#likes_count' do
-      it 'returns media likes count' do
-        likes_count = described_class.new(media_data).likes_count
-        expect(likes_count).to eql(123)
-      end
-    end
+    data_forwarding_spec_for('likes_count', path: %w[edge_liked_by count])
 
     context '#video?' do
       it 'returns media likes count' do
@@ -45,5 +40,11 @@ describe Grammer::Media do
       media_collection = described_class.all_from(node)
       expect(media_collection).to be_a(Array)
     end
+  end
+
+  private
+
+  def described_class_with_data(custom_node_data)
+    described_class.new(custom_node_data)
   end
 end

@@ -22,9 +22,9 @@ end
 
 def data_forwarding_spec_for(method_name, path: nil, value: 'default')
   context "##{method_name}" do
-    it "returns node #{path}" do
+    it "returns #{path}" do
       data = [path].flatten.reverse.inject(value) { |mem, key| { key => mem } }
-      expect(node_with_data(data).send(method_name)).to eq(value)
+      expect(described_class_with_data(data).send(method_name)).to eq(value)
     end
   end
 end

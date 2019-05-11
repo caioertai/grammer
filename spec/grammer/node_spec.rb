@@ -47,7 +47,7 @@ describe Grammer::Node do
 
   private
 
-  def node_with_data(custom_node_data)
+  def described_class_with_data(custom_node_data)
     custom_service = double('IgService', node: custom_node_data)
     described_class.new('caioertai', service: custom_service)
   end
