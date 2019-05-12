@@ -34,15 +34,15 @@ describe Grammer::Node do
   end
 
   context 'data forwarding methods' do
-    data_forwarding_spec_for('biography', path: 'biography')
-    data_forwarding_spec_for('business?', path: 'is_business_account')
-    data_forwarding_spec_for('followers_count', path: %w[edge_followed_by count])
-    data_forwarding_spec_for('following_count', path: %w[edge_follow count])
-    data_forwarding_spec_for('full_name', path: 'full_name')
-    data_forwarding_spec_for('id', path: 'id')
-    data_forwarding_spec_for('private?', path: 'is_private')
-    data_forwarding_spec_for('username', path: 'username')
-    data_forwarding_spec_for('verified?', path: 'is_verified')
+    forwarding_spec_for('biography', path: 'biography')
+    forwarding_spec_for('business?', path: 'is_business_account')
+    forwarding_spec_for('followers_count', path: %w[edge_followed_by count])
+    forwarding_spec_for('following_count', path: %w[edge_follow count])
+    forwarding_spec_for('full_name', path: 'full_name')
+    forwarding_spec_for('id', path: 'id')
+    forwarding_spec_for('private?', path: 'is_private')
+    forwarding_spec_for('username', path: 'username')
+    forwarding_spec_for('verified?', path: 'is_verified')
   end
 
   private

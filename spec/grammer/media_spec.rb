@@ -9,9 +9,9 @@ describe Grammer::Media do
   end
 
   context 'data forwarding methods' do
-    data_forwarding_spec_for('likes_count', path: %w[edge_liked_by count])
-    data_forwarding_spec_for('video?', path: 'is_video')
-    data_forwarding_spec_for('image_url', path: 'display_url')
+    forwarding_spec_for('likes_count', path: %w[edge_liked_by count])
+    forwarding_spec_for('video?', path: 'is_video')
+    forwarding_spec_for('image_url', path: 'display_url')
   end
 
   context '.all_from' do

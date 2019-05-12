@@ -5,7 +5,7 @@ require 'spec_helper'
 describe Grammer::IgService do
   it { expect(described_class).to include(HTTParty) }
 
-  context "#initialize" do
+  context '#initialize' do
     it 'sets given JSON parser' do
       JSONParser = Struct.new('JSONParser')
       service = described_class.new(json_parser: JSONParser)
