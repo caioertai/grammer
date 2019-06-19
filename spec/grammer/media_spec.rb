@@ -12,6 +12,9 @@ describe Grammer::Media do
     forwarding_spec_for('likes_count', path: %w[edge_liked_by count])
     forwarding_spec_for('video?', path: 'is_video')
     forwarding_spec_for('image_url', path: 'display_url')
+    forwarding_spec_for('text', path: ['edge_media_to_caption', 'edges', 0, 'node', 'text'])
+    forwarding_spec_for('height', path: %w[dimensions height])
+    forwarding_spec_for('width', path: %w[dimensions width])
   end
 
   context '.all_from' do

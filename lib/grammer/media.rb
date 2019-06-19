@@ -9,7 +9,10 @@ module Grammer
     attr_data_forwarder(
       image_url: 'display_url',
       likes_count: %w[edge_liked_by count],
-      video?: 'is_video'
+      text: ['edge_media_to_caption', 'edges', 0, 'node', 'text'],
+      video?: 'is_video',
+      height: %w[dimensions height],
+      width: %w[dimensions width]
     )
 
     ##
