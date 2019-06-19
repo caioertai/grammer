@@ -29,6 +29,7 @@ To include Grammer you model must implement a method that returns an Instagram u
 
 **2.** In your model, tell grammer where to find the Instagram username and on which method to provide the data:
 
+    include Grammer
     grammed_by :username, on: :ig
 
 **3.** This allows you to call `#ig` on your object to retrieve its Instagram info.
