@@ -6,17 +6,15 @@ module Grammer
   # Represents Instagram nodes (accounts)
   class Node
     extend DataForwardable
-    attr_data_forwarder(
-      biography: 'biography',
-      business?: 'is_business_account',
-      followers_count: %w[edge_followed_by count],
-      following_count: %w[edge_follow count],
-      full_name: 'full_name',
-      id: 'id',
-      private?: 'is_private',
-      username: 'username',
-      verified?: 'is_verified'
-    )
+    attr_data_forwarder biography: 'biography',
+                        business?: 'is_business_account',
+                        followers_count: %w[edge_followed_by count],
+                        following_count: %w[edge_follow count],
+                        full_name: 'full_name',
+                        id: 'id',
+                        private?: 'is_private',
+                        username: 'username',
+                        verified?: 'is_verified'
 
     ##
     # General Instagram hash of data from the node
