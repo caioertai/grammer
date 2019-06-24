@@ -8,6 +8,9 @@ SimpleCov.start
 
 require File.expand_path('environment', __dir__)
 
+# Webmock
+require 'webmock/rspec'
+
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
