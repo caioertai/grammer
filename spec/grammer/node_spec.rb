@@ -41,7 +41,6 @@ describe Grammer::Node do
     forwarding_spec_for('full_name', path: 'full_name')
     forwarding_spec_for('id', path: 'id')
     forwarding_spec_for('private?', path: 'is_private')
-    forwarding_spec_for('username', path: 'username')
     forwarding_spec_for('verified?', path: 'is_verified')
   end
 

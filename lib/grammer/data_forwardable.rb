@@ -8,7 +8,7 @@ module Grammer
     def attr_data_forwarder(paths)
       paths.each do |method_name, path|
         define_method(method_name) do
-          @data.dig(*path)
+          data.dig(*path)
         end
       end
     end

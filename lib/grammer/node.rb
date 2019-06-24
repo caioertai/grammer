@@ -17,19 +17,21 @@ module Grammer
                         verified?: 'is_verified'
 
     ##
-    # General Instagram hash of data from the node
-    attr_reader :data
-
-    ##
     # Service used for requesting instagram info
-    attr_reader :service
+    attr_reader :service, :username
 
     ##
     # Creates a new instagram node defined by its username.
     def initialize(username, attr = {})
+      @username    = username
       @media_class = attr[:media_class] || Media
       @service     = attr[:service] || IgService.new
-      @data        = service.node(username)
+    end
+
+    ##
+    # General Instagram hash of data from the node
+    def data
+      @data ||= service.node(username)
     end
 
     def media
