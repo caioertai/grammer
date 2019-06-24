@@ -5,7 +5,7 @@ module Grammer
   # = Node
   # Represents Instagram nodes (accounts)
   class Node
-    extend DataForwardable
+    extend InterfaceAdapter
     attr_data_forwarder biography: 'biography',
                         business?: 'is_business_account',
                         followers_count: %w[edge_followed_by count],

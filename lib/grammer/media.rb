@@ -5,7 +5,7 @@ module Grammer
   # = Media
   # Represents Instagram media
   class Media
-    extend DataForwardable
+    extend InterfaceAdapter
     attr_data_forwarder height: %w[dimensions height],
                         image_url: 'display_url',
                         likes_count: %w[edge_liked_by count],

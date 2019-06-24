@@ -4,7 +4,7 @@ module Grammer
   ##
   # Allows data forwarding paths to be defined, abstracting some of the
   # repetitive reader definitions away from the class
-  module DataForwardable
+  module InterfaceAdapter
     def attr_data_forwarder(paths)
       paths.each do |method_name, path|
         define_method(method_name) do
