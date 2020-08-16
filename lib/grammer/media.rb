@@ -5,12 +5,13 @@ module Grammer
   # = Media
   # Represents Instagram media
   class Media
-    extend DataForwardable
-    attr_data_forwarder(
-      image_url: 'display_url',
-      likes_count: %w[edge_liked_by count],
-      video?: 'is_video'
-    )
+    extend InterfaceAdapter
+    attr_adapter height: %w[dimensions height],
+                 image_url: 'display_url',
+                 likes_count: %w[edge_liked_by count],
+                 text: ['edge_media_to_caption', 'edges', 0, 'node', 'text'],
+                 video?: 'is_video',
+                 width: %w[dimensions width]
 
     ##
     # General Instagram hash of data from the media
