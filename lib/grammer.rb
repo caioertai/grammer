@@ -6,8 +6,8 @@ module Grammer
   require 'httparty'
   require 'nokogiri'
 
-  require 'grammer/data_forwardable'
   require 'grammer/ig_service'
+  require 'grammer/interface_adapter'
   require 'grammer/macros'
   require 'grammer/media'
   require 'grammer/macro_handler'
