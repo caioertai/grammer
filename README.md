@@ -1,3 +1,5 @@
+> ⚠️ Archived. This gem no longer works and isn't maintained. I'm keeping it up as a record of scraping work I did between 2018 and 2020. Feel free to read the code, but don't use it in production.
+
 [![Gem Version](https://badge.fury.io/rb/grammer.svg)](https://badge.fury.io/rb/grammer)
 [![Maintainability](https://api.codeclimate.com/v1/badges/57a19b2186210fd18d19/maintainability)](https://codeclimate.com/github/caioertai/grammer/maintainability)
 [![Build Status](https://travis-ci.org/caioertai/grammer.svg?branch=master)](https://travis-ci.org/caioertai/grammer)
